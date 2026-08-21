@@ -1,0 +1,305 @@
+.pm-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(5, 6, 7, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: pmBackdropFadeIn 0.4s ease-out forwards;
+    will-change: opacity;
+}
+
+.pm-backdrop.pm-closing {
+    animation: pmBackdropFadeOut 0.4s ease-out forwards;
+}
+
+.pm-content {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    max-height: 90vh;
+    background: var(--surface-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: pmModalSlideIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    will-change: transform, opacity;
+}
+
+.pm-content.pm-closing {
+    animation: pmModalSlideOut 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.pm-top-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    z-index: 20;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+    pointer-events: none;
+}
+
+.pm-close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 30;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--surface-secondary);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.pm-close-btn:hover {
+    background: var(--border-color-hover);
+    transform: rotate(90deg);
+}
+
+.pm-body {
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    overflow-y: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.pm-header {
+    margin-bottom: 0.75rem;
+    padding-right: 2rem;
+}
+
+.pm-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.pm-title-underline {
+    height: 4px;
+    width: 60px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 100);
+}
+
+.pm-subtitle {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+.pm-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.8rem;
+}
+
+.pm-tag {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    background: var(--surface-secondary);
+}
+
+.pm-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.pm-actions {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.pm-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    flex: 1;
+    min-width: 160px;
+}
+
+.pm-btn-primary {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.pm-btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.15), transparent);
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.pm-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.pm-btn-primary:hover::after {
+    opacity: 1;
+}
+
+.pm-btn-secondary {
+    background: var(--surface-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.pm-btn-secondary:hover {
+    background: var(--border-color-hover);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes pmBackdropFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pmBackdropFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes pmModalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes pmModalSlideOut {
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.95) translateY(30px);
+    }
+}
+
+/* Scrollbar */
+.modal-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.modal-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+    .pm-content {
+        max-height: 95vh;
+    }
+
+    .pm-body {
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    .pm-title {
+        font-size: 1.75rem;
+    }
+
+    .pm-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .pm-tags {
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .pm-tag {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.8rem;
+    }
+
+    .pm-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .pm-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .pm-btn {
+        width: 100%;
+        padding: 0.9rem;
+    }
+}

@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Contact form submissions ──────────────────────────
+    // Anyone can submit a contact message (no auth required).
+    // Documents are write-only from the client — read/update/delete denied.
+    match /contacts/{docId} {
+      allow create: if
+        request.resource.data.keys().hasOnly(['name', 'email', 'message', 'createdAt'])
+        && request.resource.data.name is string
+        && request.resource.data.email is string
+        && request.resource.data.message is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 200
+        && request.resource.data.email.size() > 0
+        && request.resource.data.email.size() <= 320
+        && request.resource.data.message.size() > 0
+        && request.resource.data.message.size() <= 5000;
+      allow read, update, delete: if false;
+    }
+
+    // ── Chat messages ─────────────────────────────────────
+    // Anyone can read messages (public chatroom).
+    // Only authenticated users can create messages.
+    // Messages cannot be edited or deleted from the client.
+    match /messages/{msgId} {
+      allow read: if true;
+      allow create: if
+        request.auth != null
+        && request.resource.data.keys().hasOnly(['text', 'uid', 'displayName', 'photoURL', 'createdAt'])
+        && request.resource.data.text is string
+        && request.resource.data.text.size() > 0
+        && request.resource.data.text.size() <= 1000
+        && request.resource.data.uid == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    // ── Deny all other collections ────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
