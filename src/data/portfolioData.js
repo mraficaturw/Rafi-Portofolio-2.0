@@ -23,7 +23,7 @@ export const personalData = {
   name: "Rafi",
   fullName: "Muhammad Rafi Catur Wijayanto",
   badge: "online",
-  title: "Software Developer",
+  title: "Web Developer",
   description: "Bachelor of Computer Science (S.Kom) graduate with expertise in leading teams and developing end-to-end applications. Adaptive fast learner with high enthusiasm for mastering new technologies.",
   avatarPlaceholder: "Avatar Profile"
 };
