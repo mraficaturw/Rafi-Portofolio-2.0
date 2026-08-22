@@ -14,28 +14,12 @@ export default function HeroSection({ isActive, onSelectSection }) {
           <h1 className="hero-title">{personalData.title}</h1>
           <p className="hero-description">{personalData.description}</p>
           <div className="hero-actions-wrapper">
-            <div className="hero-actions-grid">
-              <button
-                type="button"
-                className="btn-primary"
-                onClick={() => onSelectSection('contact')}
-              >
-                Contact me
-              </button>
-              <button
-                type="button"
-                className="btn-secondary"
-                onClick={() => onSelectSection('projects')}
-              >
-                Projects
-              </button>
-              <a href={cvEN} download="CV_Rafi Catur_EN.pdf" className="btn-secondary btn-cv-override">
-                📄 CV (EN)
-              </a>
-              <a href={cvID} download="CV_Rafi Catur_ID.pdf" className="btn-secondary btn-cv-override">
-                📄 CV (ID)
-              </a>
-            </div>
+            <a href={cvEN} download="CV_Rafi Catur_EN.pdf" className="btn-secondary btn-cv-override">
+              📄 CV (EN)
+            </a>
+            <a href={cvID} download="CV_Rafi Catur_ID.pdf" className="btn-secondary btn-cv-override">
+              📄 CV (ID)
+            </a>
           </div>
         </div>
 
