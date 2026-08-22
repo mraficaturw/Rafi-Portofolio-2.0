@@ -22,7 +22,7 @@
     width: 100%;
     max-width: 750px;
     max-height: 90vh;
-    background: var(--surface-card);
+    background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     display: flex;
@@ -31,8 +31,6 @@
     animation: pmModalSlideIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     opacity: 0;
     box-shadow: var(--shadow-lg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
     will-change: transform, opacity;
 }
 
