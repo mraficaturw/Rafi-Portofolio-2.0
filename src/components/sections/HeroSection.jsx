@@ -1,4 +1,4 @@
-﻿import './HeroSection.css';
+import './HeroSection.css';
 import { personalData } from '../../data/portfolioData';
 import ProfileCard from '../features/ProfileCard/ProfileCard';
 import cvEN from '/assets/CV_M_Rafi_Catur_W_EN.pdf';
@@ -14,11 +14,11 @@ export default function HeroSection({ isActive, onSelectSection }) {
           <h1 className="hero-title">{personalData.title}</h1>
           <p className="hero-description">{personalData.description}</p>
           <div className="hero-actions-wrapper">
-            <a href={cvEN} download="CV_Rafi Catur_EN.pdf" className="btn-secondary btn-cv-override">
-              📄 CV (EN)
-            </a>
             <a href={cvID} download="CV_Rafi Catur_ID.pdf" className="btn-secondary btn-cv-override">
               📄 CV (ID)
+            </a>
+            <a href={cvEN} download="CV_Rafi Catur_EN.pdf" className="btn-secondary btn-cv-override">
+              📄 CV (EN)
             </a>
           </div>
         </div>
