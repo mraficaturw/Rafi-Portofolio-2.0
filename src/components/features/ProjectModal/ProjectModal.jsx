@@ -81,7 +81,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           </div>
 
           <p className="pm-subtitle">
-            {project.subtitle}
+            {project.role}
           </p>
 
           {project.tags && project.tags.length > 0 && (
@@ -98,6 +98,18 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             {project.fullDescription || project.description}
           </p>
 
+          <h3 className="project-subtitle">Task</h3>
+          <p className="pm-description">
+            {project.task}
+          </p>
+          <h3 className="project-subtitle">Result</h3>
+          <p className="pm-description">
+            {project.result}
+          </p>
+          <h3 className="project-subtitle">Impact</h3>
+          <p className="pm-description">
+            {project.impact}
+          </p>
           <div className="pm-actions">
             {project.demoUrl && (
               <a

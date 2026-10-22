@@ -22,7 +22,7 @@ export const COLLECTIONS = {
 
 // ── Contact form ────────────────────────────────────────
 export const CONTACT_COOLDOWN_MS = 3_600_000; // 1 hour
-export const SUCCESS_DISPLAY_MS = 5_000; // 5 seconds
+export const SUCCESS_DISPLAY_MS = 3_000; // 3 seconds
 
 // ── Chat ────────────────────────────────────────────────
 export const MAX_MESSAGE_LENGTH = 1_000;

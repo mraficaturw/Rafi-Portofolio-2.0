@@ -27,9 +27,9 @@ export default function ProjectsSection({ isActive }) {
 
       <div className="projects-grid">
         {projectsData.map((project, idx) => (
-          <div 
-            key={project.id} 
-            className="project-card" 
+          <div
+            key={project.id}
+            className="project-card"
             onClick={(e) => handleOpenModal(e, project)}
             style={{ animationDelay: `${idx * 0.1}s` }}
           >
@@ -41,13 +41,18 @@ export default function ProjectsSection({ isActive }) {
               )}
             </div>
             <div className="project-body">
-              <div className="project-tags">
-                {project.tags.map((tag, idx) => (
+              <div className="project-role">
+                <span className="role-ph">
+                  {project.role}
+                </span>
+              </div>
+              {/* <div className="project-tags">
+                {project.role.map((tag, idx) => (
                   <span key={idx} className="tag-ph">
                     {tag}
                   </span>
                 ))}
-              </div>
+              </div> */}
               <h3 className="project-title">{project.title}</h3>
               <p className="project-text">{project.description}</p>
               <div style={{ marginTop: 'auto' }}>
@@ -64,10 +69,10 @@ export default function ProjectsSection({ isActive }) {
         ))}
       </div>
 
-      <ProjectModal 
-        isOpen={!!selectedProject} 
-        onClose={handleCloseModal} 
-        project={selectedProject} 
+      <ProjectModal
+        isOpen={!!selectedProject}
+        onClose={handleCloseModal}
+        project={selectedProject}
       />
     </section>
   );

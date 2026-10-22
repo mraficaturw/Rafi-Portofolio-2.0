@@ -1,8 +1,8 @@
 import './HeroSection.css';
 import { personalData } from '../../data/portfolioData';
 import ProfileCard from '../features/ProfileCard/ProfileCard';
-import cvEN from '/assets/CV_M_Rafi_Catur_W_EN.pdf';
-import cvID from '/assets/CV_M_Rafi_Catur_W.pdf';
+import cvEN from '/assets/CV_M. Rafi Catur W_EN.pdf';
+import cvID from '/assets/CV_M. Rafi Catur W.pdf';
 
 export default function HeroSection({ isActive, onSelectSection }) {
 
@@ -10,9 +10,10 @@ export default function HeroSection({ isActive, onSelectSection }) {
     <section id="home" className={`spa-section ${isActive ? 'active-section' : ''}`}>
       <div className="hero-container">
         <div className="hero-content">
-          <span className="badge-gray" style={{ display: "flex", maxWidth: "90px", gap: "0.3rem", alignItems: "center" }}><span className="hero-online-dot" />{personalData.badge}</span>
+          <span className="badge-gray" style={{ display: "flex", maxWidth: "90px", gap: "0.3rem", alignItems: "center" }}><span className="hero-online-dot" />ONLINE</span>
           <h1 className="hero-title">{personalData.title}</h1>
           <p className="hero-description">{personalData.description}</p>
+          <p className="hero-location"><span className="location-icon"></span> {personalData.location}</p>
           <div className="hero-actions-wrapper">
             <a href={cvID} download="CV_Rafi Catur_ID.pdf" className="btn-secondary btn-cv-override">
               📄 CV (ID)
@@ -26,7 +27,7 @@ export default function HeroSection({ isActive, onSelectSection }) {
         <div className="hero-media" style={{ height: '100%', width: '100%' }}>
           <ProfileCard
             name="M. Rafi Catur W."
-            title="Web Developer"
+            title="System Analyst & Web Developer"
             handle="mraficw"
             status="Online"
             contactText="Contact Me"

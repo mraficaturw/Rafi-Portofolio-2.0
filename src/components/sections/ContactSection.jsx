@@ -27,19 +27,13 @@ export default function ContactSection({ isActive }) {
       <div className="contact-chat-layout">
         {/* Left: Contact info + Form */}
         <div className="contact-column">
-          <div className="contact-container" style={{ height: "650px" }}>
+          <div className="contact-container">
             <div className="contact-info">
               <h3 className="contact-info-title">{contactData.title}</h3>
               <p className="contact-info-desc">{contactData.description}</p>
             </div>
 
             <form className="contact-form" onSubmit={handleSubmit}>
-              {submitted && (
-                <div className="form-success-alert">
-                  ✓ Terima kasih! Pesan Anda berhasil terkirim.
-                </div>
-              )}
-
               {errorMsg && (
                 <div className="form-error-alert">
                   ✕ {errorMsg}
@@ -141,6 +135,16 @@ export default function ContactSection({ isActive }) {
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </a>
       </div>
+
+      {submitted && (
+        <div className="floating-notification">
+          <div className="floating-notification-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <span className="floating-notification-text">Pesan berhasil terkirim!</span>
+          <div className="floating-notification-progress"></div>
+        </div>
+      )}
     </section >
   );
 }
