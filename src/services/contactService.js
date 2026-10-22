@@ -15,7 +15,7 @@ export async function submitContactMessage({ name, email, message }) {
   const trimmedEmail = email.trim();
   const trimmedMessage = message.trim();
 
-  const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
   const response = await fetch('https://api.web3forms.com/submit', {
     method: 'POST',
