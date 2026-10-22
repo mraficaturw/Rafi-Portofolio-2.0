@@ -1,4 +1,5 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import './ContactSection.css';
 import { contactData } from '../../data/portfolioData';
 import useContactForm from '../features/ContactForm/useContactForm';
@@ -13,6 +14,17 @@ export default function ContactSection({ isActive }) {
     handleChange,
     handleSubmit,
   } = useContactForm();
+
+  const [showErrorToast, setShowErrorToast] = useState(false);
+
+  // Show error toast whenever errorMsg changes to a non-empty value
+  useEffect(() => {
+    if (errorMsg) {
+      setShowErrorToast(true);
+      const timer = setTimeout(() => setShowErrorToast(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [errorMsg]);
 
   return (
     <section id="contact" className={`spa-section ${isActive ? 'active-section' : ''}`}>
@@ -34,11 +46,7 @@ export default function ContactSection({ isActive }) {
             </div>
 
             <form className="contact-form" onSubmit={handleSubmit}>
-              {errorMsg && (
-                <div className="form-error-alert">
-                  ✕ {errorMsg}
-                </div>
-              )}
+
 
               {/* Honeypot field (hidden from real users) */}
               <div style={{ display: 'none' }} aria-hidden="true">
@@ -136,14 +144,32 @@ export default function ContactSection({ isActive }) {
         </a>
       </div>
 
-      {submitted && (
-        <div className="floating-notification">
+      {submitted && createPortal(
+        <div className="floating-notification floating-notification--success">
           <div className="floating-notification-icon">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <span className="floating-notification-text">Pesan berhasil terkirim!</span>
-          <div className="floating-notification-progress"></div>
-        </div>
+          <div className="floating-notification-body">
+            <span className="floating-notification-title">Pesan Terkirim!</span>
+            <span className="floating-notification-text">Kami akan segera menghubungi Anda.</span>
+          </div>
+          <div className="floating-notification-progress floating-notification-progress--success"></div>
+        </div>,
+        document.body
+      )}
+
+      {showErrorToast && errorMsg && createPortal(
+        <div className="floating-notification floating-notification--error">
+          <div className="floating-notification-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+          </div>
+          <div className="floating-notification-body">
+            <span className="floating-notification-title">Gagal Mengirim</span>
+            <span className="floating-notification-text">{errorMsg}</span>
+          </div>
+          <div className="floating-notification-progress floating-notification-progress--error"></div>
+        </div>,
+        document.body
       )}
     </section >
   );
