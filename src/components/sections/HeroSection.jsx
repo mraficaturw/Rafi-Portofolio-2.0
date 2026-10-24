@@ -27,7 +27,7 @@ export default function HeroSection({ isActive, onSelectSection }) {
         <div className="hero-media" style={{ height: '100%', width: '100%' }}>
           <ProfileCard
             name="M. Rafi Catur W."
-            title="System Analyst & Web Developer"
+            title="Fullstack Developer"
             handle="mraficw"
             status="Online"
             contactText="Contact Me"
