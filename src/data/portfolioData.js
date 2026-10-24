@@ -3,15 +3,17 @@ import Tools2 from '/assets/tools/reactjs.png'
 import Tools3 from '/assets/tools/php.png'
 import Tools4 from '/assets/tools/js.png'
 import Tools5 from '/assets/tools/tailwind.png'
-import Tools6 from '/assets/tools/github.png'
+import Tools6 from '/assets/tools/github.webp'
 import Tools7 from '/assets/tools/html.png'
-import Tools8 from '/assets/tools/css.png'
+import Tools8 from '/assets/tools/css.webp'
 import Tools9 from '/assets/tools/mysql.png'
-import Tools10 from '/assets/tools/bootstrap.png'
-import Tools11 from '/assets/tools/firebase.png'
+import Tools10 from '/assets/tools/bootstrap.webp'
+import Tools11 from '/assets/tools/firebase.webp'
 import Tools12 from '/assets/tools/vscode.png'
 import Tools13 from '/assets/tools/google-colab.svg'
-import Tools14 from '/assets/tools/figma.png'
+import Tools14 from '/assets/tools/figma.webp'
+import Tools15 from '/assets/tools/gcp.webp'
+
 import Project1 from '/assets/projects/proj1.webp'
 import Project2 from '/assets/projects/proj2.webp'
 import Project3 from '/assets/projects/proj3.webp'
@@ -24,6 +26,7 @@ export const personalData = {
   fullName: "Muhammad Rafi Catur Wijayanto",
   title: "Fullstack Developer",
   location: "East Jakarta, Indonesia",
+  skillLevel: "Junior",
   description: "Bachelor of Computer Science (S.Kom) graduate with expertise in leading teams and developing end-to-end applications. Adaptive fast learner with high enthusiasm for mastering new technologies.",
   avatarPlaceholder: "Avatar Profile"
 };
@@ -112,6 +115,12 @@ export const toolsData = [
     name: "Figma",
     category: "Web Design & Prototyping",
     icon: Tools14
+  },
+  {
+    id: "tool-15",
+    name: "GCP",
+    category: "Cloud Computing Platform",
+    icon: Tools15
   }
 ];
 
