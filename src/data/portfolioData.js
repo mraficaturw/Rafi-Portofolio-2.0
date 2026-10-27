@@ -1,18 +1,19 @@
-﻿import Tools1 from '/assets/tools/Laravel.png'
-import Tools2 from '/assets/tools/reactjs.png'
-import Tools3 from '/assets/tools/php.png'
-import Tools4 from '/assets/tools/js.png'
-import Tools5 from '/assets/tools/tailwind.png'
+﻿import Tools1 from '/assets/tools/Laravel.webp'
+import Tools2 from '/assets/tools/reactjs.webp'
+import Tools3 from '/assets/tools/php.webp'
+import Tools4 from '/assets/tools/js.webp'
+import Tools5 from '/assets/tools/tailwind.webp'
 import Tools6 from '/assets/tools/github.webp'
-import Tools7 from '/assets/tools/html.png'
+import Tools7 from '/assets/tools/html.webp'
 import Tools8 from '/assets/tools/css.webp'
-import Tools9 from '/assets/tools/mysql.png'
+import Tools9 from '/assets/tools/mysql.webp'
 import Tools10 from '/assets/tools/bootstrap.webp'
 import Tools11 from '/assets/tools/firebase.webp'
-import Tools12 from '/assets/tools/vscode.png'
-import Tools13 from '/assets/tools/google-colab.svg'
+import Tools12 from '/assets/tools/vscode.webp'
+import Tools13 from '/assets/tools/google-colab.webp'
 import Tools14 from '/assets/tools/figma.webp'
 import Tools15 from '/assets/tools/gcp.webp'
+import Tools16 from '/assets/tools/docker.webp'
 
 import Project1 from '/assets/projects/proj1.webp'
 import Project2 from '/assets/projects/proj2.webp'
@@ -121,6 +122,12 @@ export const toolsData = [
     name: "GCP",
     category: "Cloud Computing Platform",
     icon: Tools15
+  },
+  {
+    id: "tool-16",
+    name: "Docker",
+    category: "App Containerization",
+    icon: Tools16
   }
 ];
 

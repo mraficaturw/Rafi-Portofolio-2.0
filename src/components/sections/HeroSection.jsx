@@ -15,7 +15,6 @@ export default function HeroSection({ isActive, onSelectSection }) {
           <p className="hero-description">{personalData.description}</p>
           <div className="addtional-information-wrapper">
             <p className="hero-addtional-information-wrapper"><span className="location-icon"></span> {personalData.location}</p>
-            <p className="hero-addtional-information-wrapper"><span className="skill-level-icon"></span> {personalData.skillLevel}</p>
           </div>
           <div className="hero-actions-wrapper">
             <a href={cvID} download="CV_Rafi Catur_ID.pdf" className="btn-secondary btn-cv-override">

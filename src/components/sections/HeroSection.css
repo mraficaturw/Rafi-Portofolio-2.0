@@ -45,13 +45,6 @@
   max-width: 500px;
 }
 
-.addtional-information-wrapper {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  gap: 1.5em;
-}
-
 .location-icon {
   display: inline-block;
   width: 1.5em;
