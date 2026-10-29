@@ -14,6 +14,7 @@ import Tools13 from '/assets/tools/google-colab.webp'
 import Tools14 from '/assets/tools/figma.webp'
 import Tools15 from '/assets/tools/gcp.webp'
 import Tools16 from '/assets/tools/docker.webp'
+import Tools17 from '/assets/tools/postman.webp'
 
 import Project1 from '/assets/projects/proj1.webp'
 import Project2 from '/assets/projects/proj2.webp'
@@ -128,6 +129,12 @@ export const toolsData = [
     name: "Docker",
     category: "App Containerization",
     icon: Tools16
+  }
+  {
+    id: "tool-17",
+    name: "Postman",
+    category: "API Development & Testing",
+    icon: Tools17
   }
 ];
 
