@@ -129,7 +129,7 @@ export const toolsData = [
     name: "Docker",
     category: "App Containerization",
     icon: Tools16
-  }
+  },
   {
     id: "tool-17",
     name: "Postman",
