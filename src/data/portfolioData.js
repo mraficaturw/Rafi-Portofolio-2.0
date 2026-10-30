@@ -26,7 +26,7 @@ import Project6 from '/assets/projects/proj6.webp'
 export const personalData = {
   name: "Rafi",
   fullName: "Muhammad Rafi Catur Wijayanto",
-  title: "Fullstack Developer",
+  title: "Web Developer",
   location: "East Jakarta, Indonesia",
   skillLevel: "Junior",
   description: "Bachelor of Computer Science (S.Kom) graduate with expertise in leading teams and developing end-to-end applications. Adaptive fast learner with high enthusiasm for mastering new technologies.",
