@@ -7,7 +7,8 @@ const CATEGORIES = [
   { id: 'core', label: 'Languages & Frameworks', match: ['Laravel', 'ReactJS', 'PHP', 'JavaScript'] },
   { id: 'frontend', label: 'Frontend & Styling', match: ['Tailwind CSS', 'HTML', 'CSS', 'Bootstrap', 'Figma'] },
   { id: 'backend', label: 'Backend & Database', match: ['Laravel', 'PHP', 'MySQL', 'Postman'] },
-  { id: 'cloud', label: 'Cloud & Tools', match: ['Firebase', 'GCP', 'Docker', 'GitHub', 'VSCode', 'Google Colab'] },
+  { id: 'cloud', label: 'Cloud & Tools', match: ['Firebase', 'GCP'] },
+  { id: 'Others', label: 'Other Tools', match: ['Docker', 'Github', 'VSCode', 'Google Colab'] }
 ];
 
 export default function ToolsSection({ isActive }) {
