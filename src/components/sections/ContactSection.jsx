@@ -15,16 +15,16 @@ export default function ContactSection({ isActive }) {
     handleSubmit,
   } = useContactForm();
 
-  const [showErrorToast, setShowErrorToast] = useState(false);
+  const [dismissedError, setDismissedError] = useState(null);
+  const showErrorToast = Boolean(errorMsg && dismissedError !== errorMsg);
 
-  // Show error toast whenever errorMsg changes to a non-empty value
+  // Auto-dismiss error toast after 5s
   useEffect(() => {
-    if (errorMsg) {
-      setShowErrorToast(true);
-      const timer = setTimeout(() => setShowErrorToast(false), 5000);
+    if (errorMsg && dismissedError !== errorMsg) {
+      const timer = setTimeout(() => setDismissedError(errorMsg), 5000);
       return () => clearTimeout(timer);
     }
-  }, [errorMsg]);
+  }, [errorMsg, dismissedError]);
 
   return (
     <section id="contact" className={`spa-section ${isActive ? 'active-section' : ''}`}>
@@ -126,9 +126,11 @@ export default function ContactSection({ isActive }) {
 
         {/* Right: Chat Room */}
         <div className="chat-column">
-          <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', minHeight: '1000px', color: 'var(--text-secondary)' }}>Loading Chat Room...</div>}>
-            <ChatRoom />
-          </Suspense>
+          {isActive && (
+            <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', minHeight: '1000px', color: 'var(--text-secondary)' }}>Loading Chat Room...</div>}>
+              <ChatRoom />
+            </Suspense>
+          )}
         </div>
       </div>
 

@@ -10,7 +10,7 @@
 
 html,
 body {
-  font-family: var(--font-inter);
+  font-family: var(--font-primary);
   color: var(--text-primary);
   background-color: var(--bg-main);
   min-height: 100vh;
@@ -90,11 +90,11 @@ body {
 main.content-area {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 7.5rem 1.5rem 4rem 1.5rem;
+  padding: 6.5rem 1.5rem 4rem 1.5rem;
   min-height: calc(100vh - 120px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .spa-section {

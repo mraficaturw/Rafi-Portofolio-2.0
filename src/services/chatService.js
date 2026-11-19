@@ -9,6 +9,7 @@ import {
   addDoc,
   query,
   orderBy,
+  limit,
   onSnapshot,
   serverTimestamp,
 } from 'firebase/firestore';
@@ -16,6 +17,7 @@ import { COLLECTIONS, MAX_MESSAGE_LENGTH } from '../constants';
 
 /**
  * Subscribe to real-time chat messages, ordered by creation time.
+ * Limits to last 50 messages to prevent excessive Firestore reads and memory bloat.
  *
  * @param {(messages: Array<{id: string, [key: string]: any}>) => void} callback
  * @returns {() => void} Unsubscribe function
@@ -23,7 +25,8 @@ import { COLLECTIONS, MAX_MESSAGE_LENGTH } from '../constants';
 export function subscribeToMessages(callback) {
   const q = query(
     collection(db, COLLECTIONS.MESSAGES),
-    orderBy('createdAt')
+    orderBy('createdAt', 'desc'),
+    limit(50)
   );
 
   return onSnapshot(q, (snapshot) => {
@@ -31,7 +34,8 @@ export function subscribeToMessages(callback) {
       id: doc.id,
       ...doc.data(),
     }));
-    callback(msgs);
+    // Reverse to display chronologically (oldest at top, newest at bottom)
+    callback(msgs.reverse());
   });
 }
 

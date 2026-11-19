@@ -72,7 +72,7 @@
   padding: 0.75rem 1rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  font-family: var(--font-inter);
+  font-family: var(--font-primary);
   font-size: 0.95rem;
   background: rgba(255, 255, 255, 0.035);
   color: var(--text-primary);

@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import Preloader from './components/ui/preloader';
 import PersistentBackground from './components/layout/PersistentBackground';
 import Navbar from './components/layout/Navbar';
@@ -17,7 +17,13 @@ function getInitialSection() {
 
 export default function App() {
   const [activeSection, setActiveSection] = useState(getInitialSection);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => {
+    try {
+      return !sessionStorage.getItem('hasSeenPreloader');
+    } catch {
+      return true;
+    }
+  });
 
   const handlePreloaderComplete = () => {
     setIsLoading(false);

@@ -1,4 +1,4 @@
-﻿import Tools1 from '/assets/tools/Laravel.webp'
+import Tools1 from '/assets/tools/Laravel.webp'
 import Tools2 from '/assets/tools/reactjs.webp'
 import Tools3 from '/assets/tools/php.webp'
 import Tools4 from '/assets/tools/js.webp'
@@ -22,6 +22,7 @@ import Project3 from '/assets/projects/proj3.webp'
 import Project4 from '/assets/projects/proj4.webp'
 import Project5 from '/assets/projects/proj5.webp'
 import Project6 from '/assets/projects/proj6.webp'
+import Project7 from '/assets/projects/proj7.webp'
 
 export const personalData = {
   name: "Rafi",
@@ -141,6 +142,34 @@ export const toolsData = [
 export const projectsData = [
   {
     id: "proj-1",
+    title: "Employee Competencies Development Program",
+    role: "Data Analyst",
+    tags: ["Microsoft Excel", "Data Analysis"],
+    description: "Menganalisis data pemetaan kompetensi karyawan menggunakan Microsoft Excel untuk menyusun rekomendasi program pelatihan yang tepat sasaran.",
+    task: "Mengambil data hasil uji kompetensi karyawan melalui Gform kemudian Membuat Alur data dengan Microsoft Excel untuk menganalisis Gap Competency Karyawan dan Training Need Analysis (TNA)",
+    result: "Berhasil Menyajikan Dashboard untuk tiap Karyawan yang berisi Radar Chart untuk melihat Gap Kompetensi terhadap standar yang ditetapkan dan menyajikan Tabel Rekomendasi Training",
+    impact: "Mempermudah identifikasi kesenjangan kompetensi (Competency Gap) setiap karyawan melalui dashboard interaktif berbasis Radar Chart, mengotomatisasi perhitungan selisih kompetensi terhadap standar yang ditetapkan, serta menghasilkan rekomendasi program pelatihan (Training Needs Analysis) yang lebih terarah dan berbasis data untuk mendukung perencanaan pengembangan kompetensi karyawan.",
+    fullDescription: "Bertugas sebagai Data Analyst, menganalisis data dari pemetaan kompetensi karyawan departemen maintenance menggunakan Microsoft Excel untuk mengidentifikasi kesenjangan kompetensi di setiap subjek. Hasil analisis digunakan sebagai dasar untuk menyusun rekomendasi program pelatihan (Training Needs Analysis) yang memenuhi kebutuhan pengembangan karyawan.",
+    demoUrl: "",
+    repoUrl: "",
+    image: Project6
+  },
+  {
+    id: "proj-2",
+    title: "FindUp",
+    role: "Cloud Engineer",
+    tags: ["GCP", "Figma", "Cloud Computing", "FastAPI", "Cloud SQL"],
+    description: "Design arsitektur aplikasi dengan Figma dan Deploy backend memanfaatkan layanan Google Cloud Platform.",
+    task: "Mendesign dan Membangun Arsitektur Cloud",
+    result: "Berhasil Membuat Arsitektur Cloud menggunakan Figma dan Deploy Backend serta Integrasi Model Machine Learning ke Aplikasi Menggunakan Google Cloud Platform",
+    impact: "",
+    fullDescription: "Merancang Arsitektur Aplikasi menggunakan Figma kemudian mengimplementasikan Arsitektur tersebut dengan Google Cloud Platform menggunakan App Engine untuk Deployment Aplikasi, CloudStorage untuk penyimpanan file, Compute Engine untuk Backend, dan CloudSQL untuk Database.",
+    demoUrl: "",
+    repoUrl: "https://github.com/Timnas-Bangkit",
+    image: Project5
+  },
+  {
+    id: "proj-3",
     title: "ECDP Working Process Digitalization",
     role: "Fullstack Developer",
     tags: ["Laravel", "Laravel Reverb", "MySQL", "TailwindCSS"],
@@ -152,34 +181,6 @@ export const projectsData = [
     demoUrl: "",
     repoUrl: "https://github.com/mraficaturw/employee-competencies-development-program.git",
     image: Project1
-  },
-  {
-    id: "proj-2",
-    title: "SIA Mahasiswa KIP-K UNSIKA",
-    role: "Fullstack Developer",
-    tags: ["Laravel", "Filament", "PHP"],
-    description: "Sistem Informasi Akademik Mahasiswa KIP-K UNSIKA dengan fitur manajemen berita, pendataan KHS, pelacakan pencairan beasiswa, dan layanan pengaduan Menggunakan Framework Laravel 12 dan Package Filament.",
-    task: "Merancang dan Membangun Sistem Informasi Akademik (SIA) untuk Mahasiswa KIP-K Unsika dan Staff Pengelola Beasiswa Kampus menggunakan metode SDLC Waterfall, Mulai dari Analisis AS-IS & TO-BE, merancang Use Case Diagram, Activity Diagram, Sequence Diagram, dan ERD. Setelah itu Implementasi Sistem menggunakan Laravel 12 dan Package Filament untuk Panel Admin. Diuji dengan Whitebox Testing (Basis Path Testing), Blackbox Testing dan User Acceptance Testing (UAT)",
-    result: "Berhasil Dikembangkan dengan Melewati Skenario Blackbox Testing dan  Basis Path Testing serta mendapatkan penerimaan pengguna Sebesar 95,71%",
-    impact: "Mempermudah akses informasi beasiswa, pengelolaan data KHS, pelacakan pencairan beasiswa, pengunduhan SK, serta penyampaian pengaduan. Sistem ini mengurangi ketergantungan pada penyebaran informasi melalui berbagai kanal terpisah, meningkatkan efisiensi administrasi bagi staff pengelola beasiswa, serta memberikan kemudahan akses layanan bagi mahasiswa.",
-    fullDescription: "Situs web untuk pusat informasi mahasiswa KIP-K UNSIKA dan Staff Pengelola Beasiswa Kampus menggunakan Laravel dan Filament untuk mengatasi penyebaran informasi KIP terutama dari internal Unsika yang tidak terpusat. Sistem ini menyediakan fitur untuk manajemen berita, pendataan KHS, pelacakan pencairan beasiswa, pengunduhan SK, FAQ, dan layanan pengaduan.",
-    demoUrl: "https://kipunsika.vercel.app/",
-    repoUrl: "",
-    image: Project2
-  },
-  {
-    id: "proj-3",
-    title: "SIKARIR",
-    role: "Backend Developer",
-    tags: ["Laravel", "Filament", "Fullstack", "Web App"],
-    description: "Aplikasi web untuk portal informasi magang yang dilengkapi dengan admin panel berbasis Filament untuk memudahkan pencarian magang sesuai jurusan dengan Jaminan Konversi SKS.",
-    task: "Berperan sebagai Backend Developer menggunakan Laravel untuk mengimplementasikan logika aplikasi, dengan membuat migration, model, controller, middleware, autentikasi, dan Blade view. Mengintegrasikan Filament Admin Panel untuk menyederhanakan manajemen konten, memungkinkan administrator membuat dan mengelola lowongan magang melalui antarmuka yang ramah pengguna. Meningkatkan performa aplikasi dengan mengoptimalkan kueri database dan menerapkan caching untuk data yang sering diakses.",
-    result: "Berhasil mengimplementasikan backend dengan Melewati Skenario Blackbox Testing.",
-    impact: "Meningkatkan efisiensi pengelolaan konten, menjaga performa aplikasi melalui optimasi kueri database dan caching, serta memastikan fungsionalitas sistem berjalan sesuai skenario pengujian Black Box Testing untuk mendukung penyediaan informasi magang yang mudah diakses oleh mahasiswa UNSIKA.",
-    fullDescription: "Situs web yang dikembangkan untuk menjadi Portal Lowongan Magang untuk Mahasiswa Unsika dengan Jaminan Konversi SKS dan Sesuai Jurusan. Dengan Harapan web ini bisa membuat seluruh mahasiswa UNSIKA mendapatkan pengalaman magang sebelum lulus",
-    demoUrl: "https://sikarir-olive.vercel.app",
-    repoUrl: "https://github.com/mraficaturw/SIKARIR.git",
-    image: Project3
   },
   {
     id: "proj-4",
@@ -197,31 +198,45 @@ export const projectsData = [
   },
   {
     id: "proj-5",
-    title: "FindUp",
-    role: "Cloud Engineer",
-    tags: ["GCP", "Figma", "Cloud Computing", "FastAPI", "Cloud SQL"],
-    description: "Design arsitektur aplikasi dengan Figma dan Deploy backend memanfaatkan layanan Google Cloud Platform.",
-    task: "Mendesign dan Membangun Arsitektur Cloud",
-    result: "Berhasil Membuat Arsitektur Cloud menggunakan Figma dan Deploy Backend serta Integrasi Model Machine Learning ke Aplikasi Menggunakan Google Cloud Platform",
-    impact: "",
-    fullDescription: "Merancang Arsitektur Aplikasi menggunakan Figma kemudian mengimplementasikan Arsitektur tersebut dengan Google Cloud Platform menggunakan App Engine untuk Deployment Aplikasi, CloudStorage untuk penyimpanan file, Compute Engine untuk Backend, dan CloudSQL untuk Database.",
-    demoUrl: "",
-    repoUrl: "https://github.com/Timnas-Bangkit",
-    image: Project5
+    title: "SIKARIR",
+    role: "Backend Developer",
+    tags: ["Laravel", "Filament", "Fullstack", "Web App"],
+    description: "Aplikasi web untuk portal informasi magang yang dilengkapi dengan admin panel berbasis Filament untuk memudahkan pencarian magang sesuai jurusan dengan Jaminan Konversi SKS.",
+    task: "Berperan sebagai Backend Developer menggunakan Laravel untuk mengimplementasikan logika aplikasi, dengan membuat migration, model, controller, middleware, autentikasi, dan Blade view. Mengintegrasikan Filament Admin Panel untuk menyederhanakan manajemen konten, memungkinkan administrator membuat dan mengelola lowongan magang melalui antarmuka yang ramah pengguna. Meningkatkan performa aplikasi dengan mengoptimalkan kueri database dan menerapkan caching untuk data yang sering diakses.",
+    result: "Berhasil mengimplementasikan backend dengan Melewati Skenario Blackbox Testing.",
+    impact: "Meningkatkan efisiensi pengelolaan konten, menjaga performa aplikasi melalui optimasi kueri database dan caching, serta memastikan fungsionalitas sistem berjalan sesuai skenario pengujian Black Box Testing untuk mendukung penyediaan informasi magang yang mudah diakses oleh mahasiswa UNSIKA.",
+    fullDescription: "Situs web yang dikembangkan untuk menjadi Portal Lowongan Magang untuk Mahasiswa Unsika dengan Jaminan Konversi SKS dan Sesuai Jurusan. Dengan Harapan web ini bisa membuat seluruh mahasiswa UNSIKA mendapatkan pengalaman magang sebelum lulus",
+    demoUrl: "https://sikarir-olive.vercel.app",
+    repoUrl: "https://github.com/mraficaturw/SIKARIR.git",
+    image: Project3
   },
   {
     id: "proj-6",
-    title: "Employee Competencies Development Program",
-    role: "Data Analyst",
-    tags: ["Microsoft Excel", "Data Analysis"],
-    description: "Menganalisis data pemetaan kompetensi karyawan menggunakan Microsoft Excel untuk menyusun rekomendasi program pelatihan yang tepat sasaran.",
-    task: "Mengambil data hasil uji kompetensi karyawan melalui Gform kemudian Membuat Alur data dengan Microsoft Excel untuk menganalisis Gap Competency Karyawan dan Training Need Analysis (TNA)",
-    result: "Berhasil Menyajikan Dashboard untuk tiap Karyawan yang berisi Radar Chart untuk melihat Gap Kompetensi terhadap standar yang ditetapkan dan menyajikan Tabel Rekomendasi Training",
-    impact: "Mempermudah identifikasi kesenjangan kompetensi (Competency Gap) setiap karyawan melalui dashboard interaktif berbasis Radar Chart, mengotomatisasi perhitungan selisih kompetensi terhadap standar yang ditetapkan, serta menghasilkan rekomendasi program pelatihan (Training Needs Analysis) yang lebih terarah dan berbasis data untuk mendukung perencanaan pengembangan kompetensi karyawan.",
-    fullDescription: "Bertugas sebagai Data Analyst, menganalisis data dari pemetaan kompetensi karyawan departemen maintenance menggunakan Microsoft Excel untuk mengidentifikasi kesenjangan kompetensi di setiap subjek. Hasil analisis digunakan sebagai dasar untuk menyusun rekomendasi program pelatihan (Training Needs Analysis) yang memenuhi kebutuhan pengembangan karyawan.",
-    demoUrl: "",
+    title: "SIA Mahasiswa KIP-K UNSIKA",
+    role: "Fullstack Developer",
+    tags: ["Laravel", "Filament", "PHP"],
+    description: "Sistem Informasi Akademik Mahasiswa KIP-K UNSIKA dengan fitur manajemen berita, pendataan KHS, pelacakan pencairan beasiswa, dan layanan pengaduan Menggunakan Framework Laravel 12 dan Package Filament.",
+    task: "Merancang dan Membangun Sistem Informasi Akademik (SIA) untuk Mahasiswa KIP-K Unsika dan Staff Pengelola Beasiswa Kampus menggunakan metode SDLC Waterfall, Mulai dari Analisis AS-IS & TO-BE, merancang Use Case Diagram, Activity Diagram, Sequence Diagram, dan ERD. Setelah itu Implementasi Sistem menggunakan Laravel 12 dan Package Filament untuk Panel Admin. Diuji dengan Whitebox Testing (Basis Path Testing), Blackbox Testing dan User Acceptance Testing (UAT)",
+    result: "Berhasil Dikembangkan dengan Melewati Skenario Blackbox Testing dan  Basis Path Testing serta mendapatkan penerimaan pengguna Sebesar 95,71%",
+    impact: "Mempermudah akses informasi beasiswa, pengelolaan data KHS, pelacakan pencairan beasiswa, pengunduhan SK, serta penyampaian pengaduan. Sistem ini mengurangi ketergantungan pada penyebaran informasi melalui berbagai kanal terpisah, meningkatkan efisiensi administrasi bagi staff pengelola beasiswa, serta memberikan kemudahan akses layanan bagi mahasiswa.",
+    fullDescription: "Situs web untuk pusat informasi mahasiswa KIP-K UNSIKA dan Staff Pengelola Beasiswa Kampus menggunakan Laravel dan Filament untuk mengatasi penyebaran informasi KIP terutama dari internal Unsika yang tidak terpusat. Sistem ini menyediakan fitur untuk manajemen berita, pendataan KHS, pelacakan pencairan beasiswa, pengunduhan SK, FAQ, dan layanan pengaduan.",
+    demoUrl: "https://kipunsika.vercel.app/",
     repoUrl: "",
-    image: Project6
+    image: Project2
+  },
+  {
+    id: "proj-7",
+    title: "Task Management API",
+    role: "Backend Developer",
+    tags: ["PHP", "Laravel 13", "MySQL", "REST API", "Sanctum", "PHPUnit", "Postman"],
+    description: "Mengembangkan RESTful API untuk mengelola tugas pengguna dengan Laravel 13, menerapkan autentikasi, otorisasi, dan pengujian endpoint API.",
+    task: "Merancang dan mengembangkan endpoint REST API untuk autentikasi pengguna serta operasi CRUD (Create, Read, Update, Delete) pada data tugas. Mengimplementasikan Laravel Sanctum untuk autentikasi berbasis token, Form Request untuk validasi input, serta Policy untuk memastikan setiap pengguna hanya dapat mengakses dan mengelola tugas miliknya.",
+    result: "Berhasil membangun RESTful API dengan fitur registrasi, login, logout, dan manajemen tugas yang dilengkapi autentikasi token, validasi request, pembatasan akses berdasarkan kepemilikan data, pagination, serta API Resource untuk standardisasi respons JSON.",
+    impact: "Meningkatkan keamanan dan konsistensi pengelolaan data melalui autentikasi dan otorisasi berbasis pengguna, memastikan setiap operasi CRUD hanya dapat dilakukan oleh pemilik data, serta mempermudah integrasi backend dengan aplikasi frontend melalui respons API berbasis JSON yang terstruktur.",
+    fullDescription: "Dikembangkan menggunakan Laravel 13 sebagai proyek pembelajaran backend development dengan pendekatan RESTful API. Proyek ini mencakup implementasi autentikasi menggunakan Laravel Sanctum, pengelolaan data tugas melalui operasi CRUD, validasi menggunakan Form Request, otorisasi menggunakan Policy, serta standardisasi respons menggunakan API Resource. Pengujian endpoint dan skenario autentikasi dilakukan menggunakan Postman dan PHPUnit Feature Testing.",
+    demoUrl: "",
+    repoUrl: "https://github.com/mraficaturw/task-management-api",
+    image: Project7
   }
 ];
 

@@ -26,47 +26,59 @@ export default function ProjectsSection({ isActive }) {
       </div>
 
       <div className="projects-grid">
-        {projectsData.map((project, idx) => (
-          <div
-            key={project.id}
-            className="project-card"
-            onClick={(e) => handleOpenModal(e, project)}
-            style={{ animationDelay: `${idx * 0.1}s` }}
-          >
-            <div className="project-img-ph">
-              {project.image ? (
-                <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              ) : (
-                project.imagePlaceholder
-              )}
-            </div>
-            <div className="project-body">
-              <div className="project-role">
-                <span className="role-ph">
-                  {project.role}
-                </span>
+        {[...projectsData].reverse().map((project, idx) => {
+          const isFeatured = idx === 0;
+          return (
+            <div
+              key={project.id}
+              className={`project-card ${isFeatured ? 'project-card--featured' : ''}`}
+              onClick={(e) => handleOpenModal(e, project)}
+              style={{ animationDelay: `${idx * 0.08}s` }}
+            >
+              <div className="project-img-ph" style={{ position: 'relative' }}>
+                {isFeatured && <span className="featured-badge">⭐ FEATURED</span>}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  project.imagePlaceholder
+                )}
               </div>
-              {/* <div className="project-tags">
-                {project.role.map((tag, idx) => (
-                  <span key={idx} className="tag-ph">
-                    {tag}
+              <div className="project-body">
+                <div className="project-role">
+                  <span className="role-ph">
+                    {project.role}
                   </span>
-                ))}
-              </div> */}
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-text">{project.description}</p>
-              <div style={{ marginTop: 'auto' }}>
-                <button
-                  type="button"
-                  className="btn-secondary"
-                  style={{ display: 'inline-block', padding: '0.4rem 1rem', fontSize: '0.85rem' }}
-                >
-                  View Project
-                </button>
+                </div>
+                {project.tags && (
+                  <div className="project-tags">
+                    {project.tags.map((tag, tagIdx) => (
+                      <span key={tagIdx} className="tag-ph">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-text">{project.description}</p>
+                <div style={{ marginTop: 'auto' }}>
+                  <button
+                    type="button"
+                    className="btn-secondary"
+                    style={{ display: 'inline-block', padding: '0.4rem 1rem', fontSize: '0.85rem' }}
+                  >
+                    View Project
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <ProjectModal
