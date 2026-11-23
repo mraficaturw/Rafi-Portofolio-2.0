@@ -27,7 +27,7 @@ export default function ProjectsSection({ isActive }) {
 
       <div className="projects-grid">
         {[...projectsData].reverse().map((project, idx) => {
-          const isFeatured = idx === 0;
+          const isFeatured = project.featured;
           return (
             <div
               key={project.id}

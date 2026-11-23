@@ -208,7 +208,8 @@ export const projectsData = [
     fullDescription: "Situs web yang dikembangkan untuk menjadi Portal Lowongan Magang untuk Mahasiswa Unsika dengan Jaminan Konversi SKS dan Sesuai Jurusan. Dengan Harapan web ini bisa membuat seluruh mahasiswa UNSIKA mendapatkan pengalaman magang sebelum lulus",
     demoUrl: "https://sikarir-olive.vercel.app",
     repoUrl: "https://github.com/mraficaturw/SIKARIR.git",
-    image: Project3
+    image: Project3,
+    featured: false
   },
   {
     id: "proj-6",
@@ -222,7 +223,8 @@ export const projectsData = [
     fullDescription: "Situs web untuk pusat informasi mahasiswa KIP-K UNSIKA dan Staff Pengelola Beasiswa Kampus menggunakan Laravel dan Filament untuk mengatasi penyebaran informasi KIP terutama dari internal Unsika yang tidak terpusat. Sistem ini menyediakan fitur untuk manajemen berita, pendataan KHS, pelacakan pencairan beasiswa, pengunduhan SK, FAQ, dan layanan pengaduan.",
     demoUrl: "https://kipunsika.vercel.app/",
     repoUrl: "",
-    image: Project2
+    image: Project2,
+    featured: true
   },
   {
     id: "proj-7",
@@ -231,12 +233,13 @@ export const projectsData = [
     tags: ["PHP", "Laravel 13", "MySQL", "REST API", "Sanctum", "PHPUnit", "Postman"],
     description: "Mengembangkan RESTful API untuk mengelola tugas pengguna dengan Laravel 13, menerapkan autentikasi, otorisasi, dan pengujian endpoint API.",
     task: "Merancang dan mengembangkan endpoint REST API untuk autentikasi pengguna serta operasi CRUD (Create, Read, Update, Delete) pada data tugas. Mengimplementasikan Laravel Sanctum untuk autentikasi berbasis token, Form Request untuk validasi input, serta Policy untuk memastikan setiap pengguna hanya dapat mengakses dan mengelola tugas miliknya.",
-    result: "Berhasil membangun RESTful API dengan fitur registrasi, login, logout, dan manajemen tugas yang dilengkapi autentikasi token, validasi request, pembatasan akses berdasarkan kepemilikan data, pagination, serta API Resource untuk standardisasi respons JSON.",
-    impact: "Meningkatkan keamanan dan konsistensi pengelolaan data melalui autentikasi dan otorisasi berbasis pengguna, memastikan setiap operasi CRUD hanya dapat dilakukan oleh pemilik data, serta mempermudah integrasi backend dengan aplikasi frontend melalui respons API berbasis JSON yang terstruktur.",
+    result: "Berhasil membangun RESTful API dengan fitur registrasi, login, logout, dan manajemen tugas yang dilengkapi autentikasi token, validasi request, pembatasan akses berdasarkan kepemilikan data, pagination, serta API Resource untuk standardisasi respons JSON dan Melewati Automation Feature Test dengan PHP Unit.",
+    impact: "Meningkatkan Pemahaman teknis dan Pengalaman Praktik terkait keamanan dan konsistensi pengelolaan data melalui autentikasi dan otorisasi berbasis pengguna, memastikan setiap operasi CRUD hanya dapat dilakukan oleh pemilik data, serta mempermudah integrasi backend dengan aplikasi frontend melalui respons API berbasis JSON yang terstruktur.",
     fullDescription: "Dikembangkan menggunakan Laravel 13 sebagai proyek pembelajaran backend development dengan pendekatan RESTful API. Proyek ini mencakup implementasi autentikasi menggunakan Laravel Sanctum, pengelolaan data tugas melalui operasi CRUD, validasi menggunakan Form Request, otorisasi menggunakan Policy, serta standardisasi respons menggunakan API Resource. Pengujian endpoint dan skenario autentikasi dilakukan menggunakan Postman dan PHPUnit Feature Testing.",
     demoUrl: "",
     repoUrl: "https://github.com/mraficaturw/task-management-api",
-    image: Project7
+    image: Project7,
+    featured: false
   }
 ];
 
